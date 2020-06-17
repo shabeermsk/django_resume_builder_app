@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from builder import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('1/<int:pk>/',views.MyModelView.as_view(), name='h1'),
+    # path('2',views.CustomWeasyTemplateResponse.as_view(), name='h2'),
+    # path('3/<int:pk>/',views.MyModelPrintView.as_view(), name='h3'),
+    path('4/<int:pk>/',views.MyModelDownloadView.as_view(), name='h4'),
+    # path('5/<int:pk>/',views.MyModelImageView.as_view(), name='h5'),
+
 ]
