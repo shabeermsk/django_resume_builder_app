@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/resume.css" %}">
+  </head>
+  <body>
+
+
+    {{ resume.template.name_o |safe }} {{ resume.name }} {{ resume.template.name_c | safe }}
+    {{ resume.template.email_o |safe }} {{ resume.email }} {{ resume.template.email_c | safe }}
+    {{ resume.template.phone_o |safe }} {{ resume.phone }} {{ resume.template.phone_c | safe }}
+    {{ resume.template.education_o |safe }} {{ resume.education }} {{ resume.template.education_c | safe }}
+    {{ resume.template.experience_o |safe }} {{ resume.experience }} {{ resume.template.experience_c | safe }}
+    {{ resume.template.skills_o |safe }} {{ resume.skills }} {{ resume.template.skills_c | safe }}
+    {{ resume.template.father_o |safe }} {{ resume.father }} {{ resume.template.father_c | safe }}
+    {{ resume.template.mother_o |safe }} {{ resume.mother }} {{ resume.template.mother_c | safe }}
+    {{ resume.template.dob_o |safe }} {{ resume.dob }} {{ resume.template.dob_c | safe }}
+    {{ resume.template.intrest_o |safe }} {{ resume.intrest }} {{ resume.template.intrest_c | safe }}
+    {{ resume.template.intrest_o |safe }} {{ resume.intrest }} {{ resume.template.intrest_c | safe }}
+    {{ resume.template.declaration_o |safe }} {{ resume.declaration }} {{ resume.template.declaration_c | safe }}
+
+    <a href="{% url 'download' slug=resume.slug  %}">download</a>
+  </body>
+</html>

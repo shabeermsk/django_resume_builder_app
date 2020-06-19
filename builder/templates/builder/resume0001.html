@@ -1,0 +1,55 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>resume0001</title>
+    <link rel="stylesheet" href="{% static "css/resume.css" %}">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+          <div class="name">
+            {{ resume.name }}
+          </div>
+          <div class="contact">
+              <p>{{ resume.email }}</p>
+              <p>{{ resume.phone }}</p>
+          </div>
+      </div><hr>
+      <div class="resumecontent">
+          <table>
+            <tr>
+              <td>Education</td>
+              <td>{{ resume.education }}</td>
+            </tr>
+            <tr>
+              <td>Experience</td>
+              <td>{{ resume.experience }}</td>
+            </tr>
+            <tr>
+              <td>Skills</td>
+              <td>{{ resume.skills }}</td>
+            </tr>
+            <tr>
+              <td>Personal details</td>
+              <td><ul>
+                <li>Father : {{ resume.father }}</li>
+                <li>Mother : {{ resume.mother }}</li>
+                <li>D.O.B.  : {{ resume.dob }}</li>
+                <li>Intrest : {{ resume.intrest }}</li>
+                <li>address : {{ resume.address }}</li>
+              </ul></td>
+            </tr>
+          </table>
+          <div class="declaration">
+            <h4>{{ resume.declaration }}</h4>
+          </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
