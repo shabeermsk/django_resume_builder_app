@@ -61,16 +61,16 @@ class Resume(models.Model):
     slug = models.SlugField(null=False,unique=True)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
-    phone = models.CharField(max_length=100)
-    education = models.TextField(max_length=300)
-    experience = models.TextField(max_length=400)
-    skills = models.TextField(max_length=400)
-    father = models.CharField(max_length=100)
-    mother = models.CharField(max_length=100)
-    dob = models.CharField(max_length=20)
-    intrest = models.CharField(max_length=200)
-    address = models.TextField(max_length=200)
-    declaration = models.TextField(max_length=400)
+    phone = models.CharField(max_length=100,blank=True)
+    education = models.TextField(max_length=300,blank=True)
+    experience = models.TextField(max_length=400,blank=True)
+    skills = models.TextField(max_length=400,blank=True)
+    father = models.CharField(max_length=100,blank=True)
+    mother = models.CharField(max_length=100,blank=True)
+    dob = models.CharField(max_length=20,blank=True)
+    intrest = models.CharField(max_length=200,blank=True)
+    address = models.TextField(max_length=200,blank=True)
+    declaration = models.TextField(max_length=400,blank=True)
 
     def __str__(self):
         return self.name
@@ -81,4 +81,4 @@ class Resume(models.Model):
         return super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('resumedwnbtn',kwargs={'slug':self.slug,'pk':self.template.pk})
+        return reverse('resumedwnbtn',kwargs={'slug':self.slug})
